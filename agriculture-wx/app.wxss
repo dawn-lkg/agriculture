@@ -1,0 +1,19 @@
+/**app.wxss**/
+/* @import "" */
+@import "/static/styles/iconfont.wxss";
+@import "/static/styles/iconfont1.wxss";
+@import "/static/styles/iconfont2.wxss";
+@import "/static/styles/iconfont3.wxss";
+@import "/static/styles/iconfont4.wxss";
+page,view,text,swiper,item,image,navigator{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+page{
+  --themeColor:green;
+  --fontColor:#ff5700;
+  font-size: 28rpx;
+}
+
+

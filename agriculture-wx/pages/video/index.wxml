@@ -1,0 +1,9 @@
+<!--pages/video/index.wxml-->
+<scroll-view>
+  <view class="video_list">
+    <navigator class="video" wx:for="{{videoList}}" url="/pages/videoPlay/index?id={{item.id}}">
+      <image src="{{url+item.coverUrl}}"></image>
+    </navigator>
+  </view>
+
+</scroll-view>

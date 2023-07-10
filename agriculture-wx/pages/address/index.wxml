@@ -1,0 +1,32 @@
+<!--pages/address/index.wxml-->
+<view class="container">
+  <view class="addressList">
+  <radio-group class="address" bindchange="setDefault" wx:for="{{addressList}}">
+  <view class="address_content">
+    <view class="conten_left">
+      <view class="address_text">
+        {{item.recipientAddress}}
+      </view>
+      <view class="address_detail">
+        {{item.recipientName}}
+        {{item.recipientPhone}}
+      </view>
+    </view>
+    <navigator class="alter" url="/pages/alterAddress/index?id={{item.id}}">
+      <text class="iconfont2 icon-bianji"></text>
+    </navigator>
+  </view>
+  <view class="address_footer">
+  <label>
+  <radio value="{{item.id}}" checked="{{item.isDefault==1?true:false}}"/> 设为默认地址
+  </label>
+  </view>                                         
+  </radio-group>
+  </view>
+
+  <navigator class="add_address" url="/pages/addAddress/index">
+    <view class="add_address_button">
+    添加收货地址
+    </view>
+  </navigator>
+</view>

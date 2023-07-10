@@ -1,0 +1,46 @@
+<view class="container">
+  <view>
+    <navigator url="/pages/selectAddress/index" class="select_address">
+    <view class="empty" wx:if="{{!addressId}}">
+      <l-icon l-class="add" name="add" size="40" color="black"></l-icon>
+      <text>添加收货地址</text>
+    </view>
+      
+      <view wx:else>
+        <text>收货人：{{address.recipientName}} {{address.recipientPhone}}</text>
+        <view>{{address.recipientAddress}}</view>
+      </view>
+    </navigator>
+
+    <view class="order" wx:for="{{orderList}}">
+      <view class="order_content"> 
+        <view class="img">
+          <image src="{{baseImageUrl+item.image}}" mode="aspectFill"></image>
+        </view>
+        <view class="order_title">
+          {{item.name}}
+        </view>
+        <view class="order_price">
+          <l-price value="{{item.price}}" unit-size="30" unit-color="#000" value-size="40" value-color="#000" unit-bold="600" value-bold="600" l-class="price"></l-price>
+          <view class="num">
+           <text>x{{item.num}}</text>
+          </view>
+        </view>
+        
+      </view>
+      
+    </view>
+    <view class="order_footer">
+        <view class="text">
+          <text>共{{orderList.length}}件</text>
+          小计
+          <l-price value="{{total}}" unit-size="30" unit-color="#fa4126" value-size="40" value-color="#fa4126" unit-bold="600" value-bold="600"></l-price>
+        </view>
+      </view>
+  </view>
+
+  <view class="footer">
+    <l-price value="{{total}}" unit-size="50" unit-color="#fa4126" value-size="60" value-color="#fa4126" unit-bold="600" value-bold="600"></l-price>
+    <view class="btn" bindtap="submitOrder">结算订单</view>
+  </view>
+</view>

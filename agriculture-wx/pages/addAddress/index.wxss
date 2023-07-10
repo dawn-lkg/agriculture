@@ -1,0 +1,15 @@
+/* pages/addAddress/index.wxss */
+.label{
+  font-size: 25rpx;
+  font-weight: 700;
+}
+.save{
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+}
+.save_button{
+  background-color: #ffc200;
+  border-radius: 30rpx;
+  text-align: center;
+  padding: 15rpx 0;
+}

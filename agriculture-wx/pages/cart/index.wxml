@@ -1,0 +1,59 @@
+<view class="container">
+<view class="empty" wx:if="{{show}}">
+  <image src="/static/image/购物车缺省页.png"></image>
+</view>
+  <view class="address" wx:else>
+  <view class="address_item">
+  <view class="address_wrap">
+    <view class="address_name">收货人：{{address.recipientName}}</view>
+    <view class="address_phone">{{address.recipientPhone}}</view>
+  </view>
+  <view class="address_wrap">
+  <view class="address_peace">
+ {{address.recipientAddress}}
+  </view>
+  </view>
+  
+  </view>
+  <button bindtap="alterAddress">更换地址</button>
+  </view>
+  <view class="cart_list">
+  <view class="cart" wx:for="{{cartList}}">
+     <checkbox-group class="cart_item" bindchange="checkChange">
+       <checkbox value="{{item.id}}"  checked="{{item.select}}" data-id="{{item.id}}" bindtap="choose" />
+       <view>
+          <image src="{{baseUrl+item.image}}" mode="aspectFill"/>
+       </view>
+      
+       <view class="good_content">
+       <view class="good_title">
+         {{item.name}}
+       </view>
+       <view class="good_row">
+        <l-price unit="￥" min="0" value="{{item.price}}" color="#fa4126" value-size="36" value-bold="600"></l-price>
+         <view class="">
+          <l-counter count="{{item.num}}" min="0" max="10" data-id="{{item.id}}" bind:linchange="numChange"></l-counter>
+         </view>
+
+       </view>
+       </view>
+     </checkbox-group>
+  </view>
+  </view>
+  <view class="footer">
+  <view>
+    <checkbox-group bindchange="selectAll">
+      <checkbox  checked="{{all}}"/>
+      <text>全选</text>
+    </checkbox-group>
+  </view>
+  <view class="total_price">
+  <text>合计：</text>
+  <l-price value="{{total}}" value-bold="600" value-size="40" unit-size="40" min="0" max="3"></l-price>
+  </view>
+  <view class="account">
+  <button bindtap="acounts">结算</button>
+  </view>
+  </view>
+  
+</view>

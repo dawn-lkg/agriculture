@@ -1,0 +1,66 @@
+<view class="info">
+<l-avatar class="avatar" style="color: #fff;" text="{{nickName}}" placement="bottom" src="{{avatar}}"></l-avatar>
+</view>
+
+<view class="container">
+  <view class="section">
+    <navigator class="balance" url="/pages/recharge/index">
+      <l-price value="{{balance}}"></l-price>
+      <text>账户余额</text>
+    </navigator>
+  </view>
+  <view class="section">
+    <view class="order">
+      <view class="warp">
+        <text class="order-text">我的订单</text>
+        <view class="order-item">
+          <navigator url="/pages/order/index">查看全部</navigator>
+          <l-icon name="right" size="20" color="#c7c7c7" />
+        </view>
+      </view>
+      <view class="order-item warp">
+      <navigator class="order-icon" url="/pages/order/index">
+      <text class="iconfont icondaifukuan"></text>
+      <view>待付款</view>
+      </navigator>
+      <navigator class="order-icon" url="/pages/order/index">
+      <text class="iconfont icondaifahuo"></text>
+      <view>待发货</view>
+      </navigator>
+      <navigator class="order-icon" url="/pages/order/index">
+      <text class="iconfont iconyifahuo"></text>
+      <view>
+        待收货
+      </view>
+      </navigator>
+      <navigator class="order-icon" url="/pages/order/index">
+      <text class="iconfont icondingdanwancheng"></text>
+      <view>
+        已完成
+      </view>
+      </navigator>
+      <navigator class="order-icon" url="/pages/order/index">
+      <text class="iconfont iconshouhou"></text>
+      <view>
+        售后
+      </view>
+      </navigator>
+      </view>
+    </view>
+  </view>
+  <view class="section">
+    <view>
+      <navigator class="item" url="/pages/address/index">
+        <l-list title="我的地址" icon="address"></l-list>
+      </navigator>
+      <navigator class="item" open-type="switchTab" url="/pages/cart/index">
+        <l-list title="购物车" icon="cart"></l-list>
+      </navigator>
+      <navigator class="item">
+        <l-list title="设置" icon="setting"></l-list>
+      </navigator>
+    </view>
+  </view>
+
+
+</view>

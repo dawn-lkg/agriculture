@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view>
+  <SearchBar></SearchBar>
+  <view class="index_swiper">
+    <swiper indicator-dots autoplay>
+      <swiper-item wx:for="{{swiperList}}">
+      <navigator url="/pages/good/index?id={{item.id}}">
+      <image src="{{baseUrl+item.swiperPic}}" mode="aspectFill"/>
+      </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="index_type">
+    <view class="type_row">
+      <navigator wx:for="{{typeRow1}}" wx:key="id" open-type="switchTab" bindtap="handlerJump" data-id="{{item.id}}">
+      <image src="{{baseUrl+item.pic}}" />
+      <text>{{item.name}}</text>
+      </navigator>
+    </view>
+    <view class="type_row">
+      <navigator wx:for="{{typeRow2}}" wx:key="id" open-type="switchTab" bindtap="handlerJump" data-id="{{item.id}}">
+      <image src="{{baseUrl+item.pic}}" mode="widthFix"/>
+      <text>{{item.name}}</text>
+      </navigator>
+    </view>
+  </view>
+  <view class="index_hotProduct"> 
+     <view class="product_title">
+      <text>热卖推荐</text>
+    </view>
+    <view class="product_list">
+      <view class="product_detail" wx:for="{{hotProductList}}">
+        <navigator url="/pages/good/index?id={{item.id}}">
+        <image src="{{baseUrl+item.image}}" mode="aspectFill"/>
+        <view class="product_name">
+        {{item.name}}
+        </view>
+        <view class="product_price">
+       ￥ {{item.price}}
+        </view>
+        <button size="mini" type="warn">立即购买
+        </button>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+/* pages/paid/index.wxss */
+.container{
+  height: 700rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600rpx;
+  background-color: red;
+  height: 80rpx;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 40rpx;
+}

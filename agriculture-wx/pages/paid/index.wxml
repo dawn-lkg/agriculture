@@ -1,0 +1,7 @@
+<!--pages/paid/index.wxml-->
+<view class="container">
+
+<view class="btn" bindtap="paid">
+  立即支付
+</view>
+</view>

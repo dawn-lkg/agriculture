@@ -1,0 +1,88 @@
+/* pages/charge/index.wxss */
+page {
+  background-color: #F3f2f7;
+}
+
+.select_address {
+  margin: 30rpx 0;
+  padding: 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.select_address .add {
+  margin-right: 20rpx;
+}
+
+.order {
+  background-color: #fff;
+}
+
+.order_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 30rpx;
+}
+
+.order_content .img {
+  margin-right: 30rpx;
+}
+
+.order_content .img image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+
+.order_content .order_title {
+  width: 320rpx;
+  font-size: 26rpx;
+  margin-right: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  height: 74rpx;
+}
+.num{
+  text-align: right;
+  color: #aaa;
+  font-size: 25rpx;
+}
+.order_footer{
+  padding: 20rpx 30rpx;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn{
+  padding: 20rpx 45rpx;
+  background-color: #fa4126;
+  color: #fff;
+  font-size: 25rpx;
+  border-radius: 40rpx;
+}
+.order_price{
+  text-align: right;
+}
+.order_price .num{
+  margin-top: 100rpx;
+}
+.empty{
+  display: flex;
+}

@@ -1,0 +1,63 @@
+<!--pages/search/index.wxml-->
+<view class="container">
+  <view class="search_container">
+    <l-search-bar placeholder="搜索" shape="circle" show-cancel="{{false}}" value="{{query}}" bind:linchange="setQuery" l-class="search" clear bind:linclear="clearQuery"></l-search-bar>
+  </view>
+  <view class="filter_warp">
+    <view class="filter_item" bindtap="changeSale">
+    <text style="color: {{isSale?'':'#ff5700'}};">综合</text>
+      
+    </view>
+    <view class="filter_item" bindtap="saleFun">
+      <text style="color: {{isSale?'#ff5700':''}};">销量 </text>
+      <!-- <view class="filter_item_arrow">
+        <l-icon size="20" color="" name="shangjiantou" l-class="iconfont4"></l-icon>
+        <l-icon size="20" color="" name="shangjiantou-copy" l-class="iconfont4"></l-icon>
+      </view> -->
+
+    </view>
+    <view class="filter_item" bindtap="showVisibleFun">
+      <text wx:if="{{filter}}" style="color: #ff5700;">筛选</text>
+      <l-icon wx:if="{{filter}}" size="30" name="shaixuan" color="#ff5700" l-class="iconfont4"></l-icon>
+      <text wx:if="{{!filter}}">筛选</text>
+      <l-icon wx:if="{{!filter}}" size="30" name="shaixuan" l-class="iconfont4"></l-icon>
+    </view>
+  </view>
+  <view class="good_list">
+    <navigator url="/pages/good/index?id={{item.id}}" wx:for="{{goodList}}" class="good">
+      <view id="image">
+        <image src="{{baseImageUrl+item.image}}" mode="aspectFill"></image>
+      </view>
+      <view class="good_body">
+        <view class="good_title">
+         {{item.name}}
+        </view>
+        <view class="good_down">
+          <view class="">
+            <l-price value="{{item.price}}" value-size="35" value-bold="600"></l-price>
+          </view>
+          <view class="good_cart">
+            <l-icon size="50" name="gouwuchetianjia" l-class="iconfont4" data-good="{{item}}" catchtap="addCart"></l-icon>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    
+  </view>
+  <l-popup show="{{showPopup}}" content-align="right">
+    <view class='pupop-content'>
+      <view>价格区间</view>
+      <view class="pupop-content-input">
+        <input type="text" value="{{low}}" placeholder="最低价" bindinput="setLow" />
+        <text decode="{{true}}">&ensp;-&ensp;</text>
+        <input type="text" value="{{height}}" placeholder="最高价" bindinput="setHeight" />
+      </view>
+      <view class="pupop-content-button">
+       <view class="btn-reset" bindtap="resetValue">重置</view>
+      <view class="btn-confirm" bindtap="confirmVale">
+      确认</view>
+     
+      </view>
+    </view>
+  </l-popup>
+</view>

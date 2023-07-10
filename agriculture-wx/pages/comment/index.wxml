@@ -1,0 +1,13 @@
+<!--pages/comment/index.wxml-->
+<view class="box">
+  <text>为此次的购物打个分吧！</text>
+  <view class="star">
+    <l-rate score="{{score}}" size="50" bind:linchange="setScore"></l-rate>
+  </view>
+  <textarea placeholder="说点什么吧..." value="{{content}}" bindinput="setContent"></textarea>
+  <view class="footer">
+  <view class="btn" bindtap="submitComment">
+    提交评价
+  </view>
+  </view>
+</view>

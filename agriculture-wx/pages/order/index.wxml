@@ -1,0 +1,74 @@
+<view class="container">
+  <l-segment l-class="l-segment" bind:linchange="changeTabs" active-key="{{status}}" animated-for-line active-color="#f84342" inactive-color="#000">
+    <l-segment-item tab="全部" key="" />
+    <l-segment-item tab="待付款" key="0" />
+    <l-segment-item tab="待发货" key="1" />
+    <l-segment-item tab="待收货" key="2" />
+    <l-segment-item tab="待评价" key="3" />
+    <l-segment-item tab="已完成" key="4" />
+  </l-segment>
+  <view class="empty" wx:if="{{condition}}">
+    <image src="/static/image/订单缺省页.png" mode="widthFix" />
+  </view>
+  <view class="list" wx:else>
+    <view class="item" wx:for="{{orderList}}">
+      <view class="item_head">
+        <view class="item_head_id">订单号 {{item.id}}</view>
+        <view class="item_head_status">
+          <view class="status_warp" wx:if="{{item.status==0}}">待付款</view>
+          <view class="status_warp" wx:if="{{item.status==1}}">已支付</view>
+          <view class="status_warp" wx:if="{{item.status==2}}">
+            已发货
+          </view>
+          <view class="status_warp" wx:if="{{item.status==3}}">
+            已评价
+          </view>
+          <view class="status_warp" wx:if="{{item.status==4}}">
+            已完成
+          </view>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section_content_left">
+          <view class="image">
+            <image src="{{url+item.image}}" mode="" />
+          </view>
+          <view class="title">
+            <view class="title_text">
+              {{item.name}}
+            </view>
+
+        </view>
+      </view>
+      <view class="section_content_right">
+        <view class="price">
+          <l-price value="{{item.price}}" value-color="#fa4f37" unit-color	="#fa4f37" unit-bold="600" value-bold="600" value-size="35" unit-size=""></l-price>
+        </view>
+        <view class="num">
+          x {{item.quantity}}
+        </view>
+      </view>
+    </view>
+    <view class="footer">
+        <view class="total">
+          实付：<l-price value="{{item.quantity*item.price}}" value-color="#fa4f37" unit-color	="#fa4f37" unit-bold="600" value-bold="600" value-size="40" unit-size=""></l-price>
+        </view>
+        <view class="btn">
+          <view class="btn_cacel" bindtap="cacelOrder" data-id="{{item.id}}">
+          <text wx:if="{{item.status==4}}">删除订单</text>
+          <text wx:else>取消订单</text>  
+          </view>
+          <view wx:if="{{item.status==0}}" class="btn_confirm" bindtap="confirmOrder" data-id="{{item.id}}">
+            付款
+          </view>
+          <view wx:if="{{item.status==2}}" class="btn_confirm" bindtap="comfirmReceipt" data-id="{{item.id}}">
+            确认收货
+          </view>
+          <view wx:if="{{item.status==3}}" class="btn_confirm" bindtap="comment" data-id="{{item.id}}">
+            评价
+          </view>
+        </view>
+      </view>
+    </view>
+</view>
+</view>

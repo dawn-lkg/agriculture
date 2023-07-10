@@ -1,0 +1,46 @@
+<!--pages/charge/index.wxml-->
+<view class="container">
+  <view>
+    <navigator url="/pages/selectAddress/index" class="select_address">
+    <view class="empty" wx:if="{{!addressId}}">
+      <l-icon l-class="add" name="add" size="40" color="black"></l-icon>
+      <text>添加收货地址</text>
+    </view>
+      
+      <view wx:else>
+        <text>收货人：{{address.recipientName}} {{address.recipientPhone}}</text>
+        <view>{{address.recipientAddress}}</view>
+      </view>
+    </navigator>
+
+    <view class="order">
+      <view class="order_content"> 
+        <view class="img">
+          <image src="{{baseImageUrl+good.image}}" mode="aspectFill"></image>
+        </view>
+        <view class="order_title">
+          {{good.name}}
+        </view>
+        <view class="order_price">
+          <l-price value="{{good.price}}" unit-size="30" unit-color="#000" value-size="40" value-color="#000" unit-bold="600" value-bold="600" l-class="price"></l-price>
+          <view class="num">
+            <l-counter count="{{num}}" min="1" bind:lintap="setNum"/>
+          </view>
+        </view>
+        
+      </view>
+      <view class="order_footer">
+        <view class="text">
+          <text>共3件</text>
+          小计
+          <l-price value="{{good.price*num}}" unit-size="30" unit-color="#fa4126" value-size="40" value-color="#fa4126" unit-bold="600" value-bold="600"></l-price>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="footer">
+    <l-price value="{{good.price*num}}" unit-size="50" unit-color="#fa4126" value-size="60" value-color="#fa4126" unit-bold="600" value-bold="600"></l-price>
+    <view class="btn" bindtap="submitOrder">提交订单</view>
+  </view>
+</view>

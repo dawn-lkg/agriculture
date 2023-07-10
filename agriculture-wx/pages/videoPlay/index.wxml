@@ -1,0 +1,69 @@
+<!--pages/videoPlay/index.wxml-->
+<view class="container">
+  <video show-center-play-btn="true" show-fullscreen-btn="false" play-btn-position="center" auto-pause-if-navigate="" src="{{baseurl+info.videoUrl}}" />
+  <view class="container_tag">
+    <l-avatar src="{{imageBaseUrl+info.avatar}}" size="100"></l-avatar>
+    <view>
+
+      <l-icon wx:if="{{!isLike}}" bindtap="updateLike" name="xihuan" l-class="iconfont3" color="#fff" size="80"></l-icon>
+      <l-icon name="xihuan" wx:else bindtap="updateLike" l-class="iconfont3" color="red" size="80"></l-icon>
+      <view style="color: #fff; text-align: center;">{{likeNum}}</view>
+    </view>
+    <view>
+      <l-icon name="pinglun" bindtap="showCommentFun" l-class="iconfont3" color="#fff" size="70"></l-icon>
+      <view style="color: #fff; text-align: center;">{{commentNum}}</view>
+    </view>
+    <l-icon name="fenxiang" l-class="iconfont3" color="#fff" size="70"></l-icon>
+  </view>
+  <view class="footer">
+    <view class="title">{{info.title}}</view>
+    <view class="description">{{info.description}}</view>
+  </view>
+
+</view>
+<l-popup show="{{showComment}}" l-class="popup" content-align="bottom">
+  <scroll-view class="box" scroll-y="true">
+    <view class="comment_list">
+      <view class="comment" wx:for="{{commentList}}">
+        <view class="comment_warp">
+          <l-avatar l-class="avatar" src="{{item.avatar}}" size="70"></l-avatar>
+          <view class="comment_content">
+            <view class="name">{{item.name}}</view>
+            <view class="content">{{item.content}}</view>
+            <view class="reply" bindtap="reply" data-id="{{item.id}}">
+              <l-icon name="pinglun" l-class="iconfont3" color="{{parentCommentId==item.id?'red':'#9d9d9d'}}" size="30"></l-icon>回复
+            </view>
+          </view>
+        </view>
+        <view class="comment_children_list" wx:if="{{item.deg}}">
+          <view class="comment_children" wx:for="{{item.children}}" wx:for-item="children">
+            <l-avatar l-class="avatar" src="{{children.avatar}}" size="50"></l-avatar>
+            <view class="comment_children_content">
+              <view class="children_name">
+                {{children.name}}
+              </view>
+              <view class="children_content">
+                {{children.content}}
+              </view>
+
+            </view>
+          </view>
+
+        </view>
+        <view class="comment_footer" bindtap="openChildren"  data-id="{{item.id}}"    wx:if="{{item.children.length>0}}">
+          <text wx:if="{{!item.deg}}">——展开条{{item.children.length}}回复</text>
+          <l-icon  wx:if="{{!item.deg}}" name="down" size="20" color="#ccc" />
+          <text  wx:if="{{item.deg}}">——收起</text>
+          <l-icon  wx:if="{{item.deg}}" name="up" size="20" color="#ccc" />
+        </view>
+      </view>
+    </view>
+    <view class="confirm_comment">
+      <input type="text" value="{{content}}" id="myInput" confirm-type="send" focus='{{focus}}'  bindinput="setContent" />
+      <!-- <l-input focus="{{true}}" style="width: 600rpx;"></l-input> -->
+      <l-button bindtap="sendcomment">发送</l-button>
+    </view>
+    
+  </scroll-view>
+
+</l-popup>

@@ -1,0 +1,6 @@
+<!--pages/recharge/index.wxml-->
+<view>
+<l-input value="{{value}}" placeholder="请输入充值金额" hide-label="true" rules="{{chargeRule}}" bind:lininput="inputCharge"></l-input>
+  <l-button bindtap="recharge">充值</l-button>
+<l-toast></l-toast>
+</view>

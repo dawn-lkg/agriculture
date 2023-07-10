@@ -1,0 +1,92 @@
+/* pages/cart/index.wxss */
+.address{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.empty{
+  text-align: center;
+  margin-top: 200rpx;
+}
+.address button{
+  font-size: 20rpx;
+  width: 200rpx;
+}
+.address_item{
+  width: 80%;
+}
+.address_name{
+  padding-right: 20rpx;
+}
+.address_wrap{
+  display: flex;
+  flex-direction: row;
+
+}
+.cart_list{
+  padding: 0 40rpx;
+}
+.cart_item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20rpx 0;
+}
+.cart_item image{
+  width: 200rpx;
+  height: 200rpx;
+  overflow: hidden;
+  border-radius: 20rpx;
+  margin: 0 20rpx;
+}
+.good_row{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  justify-content: space-between;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20rpx 10rpx 20rpx 30rpx;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.total_price{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.account button{
+padding: 10rpx;
+width: 300rpx;
+background-color:#ff6f22;
+color: #fff;
+border-radius: 50rpx;
+}
+.footer checkbox{
+margin-right: 20rpx;
+}
+.good_title{
+  width: 100%;
+  height: 80rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.good_content{
+  width: 100%;
+  height: 100%;
+}

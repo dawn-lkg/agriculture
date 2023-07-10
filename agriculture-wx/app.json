@@ -1,0 +1,81 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/selectAddress/index",
+    "pages/paid/index",
+    "pages/alterAddress/index",
+    "pages/charge/index",
+     "pages/comment/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/good/index",
+    "components/SearchBar/SearchBar",
+    "pages/order/index",
+    "pages/recharge/index",
+    "pages/address/index",
+    "pages/cartCharge/index",
+    "pages/addAddress/index",
+    "pages/video/index",
+    "pages/videoPlay/index",
+    
+    "pages/search/index"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#008100",
+    "navigationBarTitleText": "农产品营销平台",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#FF5700",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "./static/icon/首页.png",
+      "selectedIconPath": "./static/icon/首页选中.png"
+    }, {
+      "pagePath": "pages/category/index",
+      "text": "分类",
+      "iconPath": "./static/icon/分类.png",
+      "selectedIconPath": "./static/icon/分类选中.png"
+    },{
+      "pagePath": "pages/video/index",
+      "text": "视频",
+      "iconPath": "./static/icon/短视频话题.png",
+      "selectedIconPath": "./static/icon/短视频话题 选中.png"
+    },{
+      "pagePath": "pages/cart/index",
+      "text": "购物车",
+      "iconPath": "./static/icon/购物车.png",
+      "selectedIconPath": "./static/icon/购物车选中.png"
+    }, {
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "./static/icon/我的.png",
+      "selectedIconPath": "./static/icon/我的选中.png"
+    }]
+  },
+  "usingComponents": {
+    "l-list": "/miniprogram_npm/lin-ui/list/index",
+    "l-avatar": "/miniprogram_npm/lin-ui/avatar/index",
+    "l-price": "/miniprogram_npm/lin-ui/price/index",
+    "l-icon": "/miniprogram_npm/lin-ui/icon/index",
+    "l-segment": "/miniprogram_npm/lin-ui/segment/index",
+    "l-segment-item": "/miniprogram_npm/lin-ui/segment-item/index",
+    "l-popup":"/miniprogram_npm/lin-ui/popup/index",
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-input":"/miniprogram_npm/lin-ui/input/index",
+    "l-toast":"/miniprogram_npm/lin-ui/toast/index",
+    "l-counter":"/miniprogram_npm/lin-ui/counter/index",
+    "l-search-bar":"/miniprogram_npm/lin-ui/search-bar/index",
+    "l-rate":"/miniprogram_npm/lin-ui/rate/index"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

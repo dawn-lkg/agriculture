@@ -1,0 +1,26 @@
+<!--pages/category/index.wxml-->
+<view class="category">
+  <SearchBar></SearchBar>
+  <view class="category_container">
+    <scroll-view class="left_menu" scroll-y>
+      <view wx:for="{{categorys}}" bindtap="change" data-value="{{item.id}}" class="{{Catindex==item.id?'active':''}}">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view class="right_menu">
+      <navigator wx:for="{{goods}}" class="good" url="/pages/good/index?id={{item.id}}">
+        <view>
+          <image src="{{baseUrl+item.image}}" mode="aspectFit"></image>
+        </view>
+
+        <view class="content">
+          <view class="title">
+            {{item.name}}
+          </view>
+          <view class="price">
+            <l-price value="{{item.price}}" value-size="35"></l-price>
+            <l-icon data-good="{{item}}" size="50" catchtap="addCart" name="gouwuchetianjia" l-class="iconfont4 icon"></l-icon>
+          </view>
+        </view>
+      </navigator>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+/* pages/comment/index.wxss */
+page{
+  background:#faf5fa;
+}
+.box{
+  padding: 30rpx;
+}
+textarea{
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 30rpx 20rpx;
+  border-radius: 20rpx;
+}
+.footer{
+  position: fixed;
+  bottom: 100rpx;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.btn{
+  width: 500rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rpx;
+  background-color: #ff579e;
+  color: #fff;
+}
+.star{
+  padding: 30rpx 0;
+}

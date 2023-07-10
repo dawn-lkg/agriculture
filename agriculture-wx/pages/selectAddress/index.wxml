@@ -1,0 +1,18 @@
+<!--pages/address/index.wxml-->
+<view class="container">
+  <view class="addressList">
+    <view class="address" bindchange="setDefault" wx:for="{{addressList}}" bindtap="setAddress" data-id="{{item.id}}">
+      <view class="address_content">
+        <view class="conten_left">
+          <view class="address_text">
+            {{item.recipientAddress}}
+          </view>
+          <view class="address_detail">
+            {{item.recipientName}}
+            {{item.recipientPhone}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
